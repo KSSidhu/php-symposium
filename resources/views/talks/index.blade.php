@@ -3,6 +3,8 @@
         <h2 class="text-xl font-semibold leading-tight text-gray-800">
             {{ __('Talks') }}
         </h2>
+
+        <x-nav-link :href="route('talks.create')" :active="request()->routeIs('talks.create')">Create</x-nav-link>
     </x-slot>
 
     <div class="py-12">

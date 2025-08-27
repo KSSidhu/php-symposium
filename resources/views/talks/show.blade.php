@@ -2,6 +2,10 @@
     <x-slot name="header">
         <h2 class="text-xl font-semibold leading-tight text-gray-800">
             {{ $talk->title }}
+
+            <x-delete-item :route="route('talks.delete', ['talk' => $talk])" text="Delete this talk" />
+            <br />
+            <a href="{{ route('talks.edit', ['talk' => $talk]) }}">Edit Talk</a>
         </h2>
     </x-slot>
 

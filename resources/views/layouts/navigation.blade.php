@@ -15,6 +15,10 @@
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                         {{ __('Dashboard') }}
                     </x-nav-link>
+
+                    <x-nav-link :href="route('talks.index')" :active="request()->routeIs('talks.index')">
+                        Talks
+                    </x-nav-link>
                 </div>
             </div>
 
@@ -72,7 +76,7 @@
                 >
                     <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
                         <path
-                            :class="{'hidden': open, 'inline-flex': ! open }"
+                            :class="{ 'hidden': open, 'inline-flex': !open }"
                             class="inline-flex"
                             stroke-linecap="round"
                             stroke-linejoin="round"
@@ -80,7 +84,7 @@
                             d="M4 6h16M4 12h16M4 18h16"
                         />
                         <path
-                            :class="{'hidden': ! open, 'inline-flex': open }"
+                            :class="{ 'hidden': !open, 'inline-flex': open }"
                             class="hidden"
                             stroke-linecap="round"
                             stroke-linejoin="round"
@@ -94,7 +98,7 @@
     </div>
 
     <!-- Responsive Navigation Menu -->
-    <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden">
+    <div :class="{ 'block': open, 'hidden': !open }" class="hidden sm:hidden">
         <div class="space-y-1 pb-3 pt-2">
             <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                 {{ __('Dashboard') }}
