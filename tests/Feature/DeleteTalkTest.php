@@ -31,7 +31,7 @@ test('a user cannot delete another user\'s talk', function () {
         ->delete(route('talks.delete', ['talk' => $talk]));
 
     $response
-        ->assertRedirect(route('talks.index'));
+        ->assertForbidden();
 
     $this->assertDatabaseHas('talks', [
         'title' => $talk->refresh()->title,
